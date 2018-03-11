@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title id="title">Grill</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="{{ static_url('bootstrap.css') }}" />
+
+    <script type="text/javascript" src="{{ static_url('jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('build.js') }}"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default">
+      <span class="navbar-brand">Grill</span>
+    </nav>
+
+    <div style="margin-left: 1%;">
+      Currently
+      <span style="display: inline; color: #4edb76;" id="state">{{ state }}</span>
+
+      {% if is_dev %}
+      <button onclick="skip_state();">Skip</button>
+      <button onclick="wrap_up();">Wrap up</button>
+      {% end %}
+    </div>
+
+    <br />
+
+    <fieldset style="vertical-align: top; display: inline; margin-left: 1%;">
+      <legend>
+        Users waiting to ask a question: 
+
+        <span id="closed" style="{%if wrap_up%}display: inline;{%else%}display: none;{%end%}">(closed to further questions)</span>
+        <button id="join" style="{%if wrap_up%}display: none;{%else%}display: inline;{%end%}" onclick="enqueue();">(join)</button>
+      </legend>
+
+      <ol id="queue">
+        {% for account_id, name in queue.items() %}
+        <li><a href="https://stackexchange.com/users/{{ account_id }}">{{ name }}</a></li>
+        {% end %}
+      </ol>
+    </fieldset>
+
+    {% if is_dev %}
+    <fieldset style="vertical-align: top; display: inline; float: right; margin-right: 1%;">
+        <legend>Sidebar:</legend>
+
+        <textarea id="sidechat" readonly=true></textarea>
+        <br />
+
+        <input id="chat_input" style="display: inline;" placeholder="Send a message" type="text"/>
+        <button style="display: inline;" onkeypress="send_chat_msg(event);" onclick="send_chat_msg();">Send</button>
+    </fieldset>
+    {% end %}
+  </body>
+</html>

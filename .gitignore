@@ -1,1 +1,7 @@
 node_modules
+__pycache__
+backend/__pycache__
+frontend/bootstrap.css
+frontend/build.js
+frontend/jquery.js
+yarn-error.log

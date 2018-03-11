@@ -1,0 +1,20 @@
+{
+    "room_id": 30332,
+    "devs": [6109921],
+
+    "key": "D3ZW3WfCKGAVwcOfKv)TCw((",
+    "client_id": "12015",
+    "redirect_uri": "https://charcoal-grill.herokuapp.com/oauth_redirect",
+
+    "preamble": "preamble",
+    "preamble_time": 60,
+    "extension": "extension",
+
+    "voice_intro": "voice_intro",
+    "question_time": 60,
+    "voice_end": "voice_end",
+
+    "waiting_time": 120,
+    "warning": "1 minute warning.",
+    "finale": "finale"
+}
