@@ -70,7 +70,7 @@ class GrillWS(tornado.websocket.WebSocketHandler):
 
     def on_message(self, message):
         if self._dev:
-            message = "m{}: {}\n".format(self._name, tornado.escape.xhtml_escape(message))
+            message = "m{}: {}\n".format(self._name, message)
 
             for socket in self.__class__._dev_sockets:
                 socket.write_message(message)
