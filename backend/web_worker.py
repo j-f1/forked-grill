@@ -18,6 +18,8 @@ _oauth_route = None
 @functools.lru_cache(maxsize=128)
 @tornado.gen.coroutine
 def _fetch_user(token):
+    token = token.decode("utf-8")
+
     http_client = tornado.httpclient.AsyncHTTPClient()
     route = "https://api.stackexchange.com/2.2/me?key={}&access_token={}&site=stackoverflow".format(config.key, token)
 
@@ -34,7 +36,7 @@ def _fetch_user(token):
 class FetchUser(tornado.web.RequestHandler):
     @tornado.gen.coroutine
     def prepare(self):
-        token = self.get_secure_cookie("access_token").decode("utf-8")
+        token = self.get_secure_cookie("access_token")
 
         if token:
             self.current_user = yield _fetch_user(token)
@@ -53,7 +55,7 @@ class GrillWS(tornado.websocket.WebSocketHandler):
     def open(self):
         self.__class__._sockets.add(self)
 
-        token = self.get_secure_cookie("access_token").decode("utf-8")
+        token = self.get_secure_cookie("access_token")
 
         if token:
             user = yield _fetch_user(token)
