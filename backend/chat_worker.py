@@ -76,7 +76,7 @@ def _voice_next(room):
     _make_gallery(room)
     _post_lines(room, config.voice_intro)
 
-    account_id, _ = waiting_users.popitem()
+    account_id, _ = waiting_users.popitem(last=False)
     next_user = requests.head("https://chat.stackexchange.com/accounts/{}".format(account_id)).headers["Location"].split("/")[2]
 
     _grant_write_access(room, next_user)
