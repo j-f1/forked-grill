@@ -9,7 +9,7 @@ add_user = (user) ->
   parts = user.split("\x01")
 
   li = document.createElement "li"
-  li.innerHTML = '<a href="://stackexchange.com/users/' + parts[0] + '">' + parts[1] + '</a>'
+  li.innerHTML = '<a href="https://stackexchange.com/users/' + parts[0] + '">' + parts[1] + '</a>'
 
   $("#queue")[0].appendChild li
 
