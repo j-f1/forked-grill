@@ -9,7 +9,7 @@
       window.location.reload
 
 @send_chat_msg = (key) ->
-  if !key || key.keyCode == 13 || key.which == 13
+  if !key || key.which == 13
     input = $("#chat_input")[0]
 
     window.sock.send(input.value)

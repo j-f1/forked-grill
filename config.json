@@ -6,15 +6,15 @@
     "client_id": "12015",
     "redirect_uri": "https://charcoal-grill.herokuapp.com/oauth_redirect",
 
-    "preamble": "preamble",
-    "preamble_time": 60,
-    "extension": "extension",
+    "preamble": "Welcome to the Grill, a Q&A-style town hall for all things Charcoal!\nIf you haven't participated here before, the format is fairly simple:\n- people get in line to ask questions here: https://charcoal-grill.herokuapp.com\n- we'll turn the room into a gallery to let the user ask their question uninterrupted\n- a Charcoal member will give a concise, canonical answer\n- we'll open up the room to all for some additional discussion before moving on to the next question\nThe session will start in about 15 minutes, so save a spot in line and start formulating your question :)\nFinally, as a friendly reminder to any moderators here: we'd appreciate it if you'd refrain from talking when the room is in gallery mode so as to allow whomever is asking the next question a chance to speak without interruption :)",
+    "preamble_time": 900,
+    "extension": "Extending discussion period as we don't have any additional questions currently.",
 
-    "voice_intro": "voice_intro",
+    "voice_intro": "We're fielding the next question now. Take your time to phrase your question, and please save any follow-up questions for the open discussion period.",
     "question_time": 60,
-    "voice_end": "voice_end",
+    "voice_end": "Opening it up to the room for discussion.",
 
-    "waiting_time": 120,
+    "discussion_time": 420,
     "warning": "1 minute warning.",
-    "finale": "finale"
+    "finale": "That's all the time we have for now. Thanks for attending!"
 }

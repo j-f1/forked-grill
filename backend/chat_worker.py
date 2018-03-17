@@ -38,7 +38,7 @@ def start():
     while _voice_next(room):
         _change_state(EventState.DISCUSSION)
 
-        if not skip_state.wait(config.waiting_time - 60):
+        if not skip_state.wait(config.discussion_time - 60):
             _post_lines(room, config.warning)
 
             skip_state.wait(60)
