@@ -11,7 +11,7 @@
     "extension": "Extending discussion period as we don't have any additional questions currently.",
 
     "voice_intro": "We're fielding the next question now. Take your time to phrase your question, and please save any follow-up questions for the open discussion period.",
-    "question_time": 60,
+    "question_time": 180,
     "voice_end": "Opening it up to the room for discussion.",
 
     "discussion_time": 420,
