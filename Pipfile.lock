@@ -1,0 +1,46 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "798c148dcfabbee4426cb662d66b2177c3ca505d5be22b59cb42feb98bff3966"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.5"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.python.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "chatexchange": {
+            "git": "https://github.com/quartata/ChatExchange",
+            "ref": "grill"
+        },
+        "enum34": {
+            "hashes": [
+                "sha256:2d81cbbe0e73112bdfe6ef8576f2238f2ba27dd0d55752a776c41d38b7da2850",
+                "sha256:644837f692e5f550741432dd3f223bbb9852018674981b1664e5dc339387588a",
+                "sha256:6bd0f6ad48ec2aa117d3d141940d484deccda84d4fcd884f5c3d93c23ecd8c79",
+                "sha256:8ad8c4783bf61ded74527bffb48ed9b54166685e4230386a9ed9b1279e2df5b1"
+            ],
+            "index": "pypi",
+            "version": "==1.1.6"
+        },
+        "tornado": {
+            "hashes": [
+                "sha256:186ba4f280429a24120f329c7c08ea91818ff6bf47ed2ccb66f8f460698fc4ed",
+                "sha256:3e9a2333362d3dad7876d902595b64aea1a2f91d0df13191ea1f8bca5a447771",
+                "sha256:4d192236a9ffee54cb0032f22a8a0cfa64258872f1d83d71f3356681f69a37be",
+                "sha256:69194436190b777abf0b631a692b0b29ba4157d18eeee07327b486e033b944dc",
+                "sha256:b5bf7407f88327b80e666dabf91a1e7beb11236855a5c65ba5cf0e9e25ae296b"
+            ],
+            "index": "pypi",
+            "version": "==5.0.1"
+        }
+    },
+    "develop": {}
+}
