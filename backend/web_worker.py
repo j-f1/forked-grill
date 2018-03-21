@@ -25,9 +25,9 @@ def _fetch_user(token):
 
     response = yield tornado.gen.Task(http_client.fetch, route)
 
-    parsed = json.loads(response.body.decode("utf-8"))
-
     try:
+        parsed = json.loads(response.body.decode("utf-8"))
+
         return parsed["items"][0]
     except:
         return
