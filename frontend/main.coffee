@@ -30,7 +30,8 @@ pop_user = (_) ->
       add_user response
 
 $ ->
-  window.sock = new WebSocket("wss://" + window.location.host + "/ws")
+  protocol = if location.protocol.slice(-2, -1) == "s" then "wss" else "ws"
+  window.sock = new WebSocket(protocol + "://" + window.location.host + "/ws")
 
   window.sock.onmessage = (message) ->
     window.ws_hooks[message.data[0]](message.data.substring(1))
