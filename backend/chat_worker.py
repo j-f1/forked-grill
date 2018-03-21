@@ -1,7 +1,6 @@
 import collections
 import enum
 import os
-import queue
 import requests
 import threading
 from chatexchange.client import Client
@@ -55,7 +54,7 @@ def _change_state(new_state):
     def callback():
         web_worker.GrillWS.broadcast(broadcast_msg)
 
-        if state == EventState.IN_QUESTION:
+        if new_state == EventState.IN_QUESTION:
             web_worker.GrillWS.broadcast("p")
 
     web_worker.ioloop.add_callback(callback)
