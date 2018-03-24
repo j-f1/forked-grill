@@ -106,10 +106,15 @@ def _make_public(room):
 
 
 def _grant_write_access(room, user):
-    route = "rooms/setuseraccess/{}".format(room.id)
-    room._client._br.post_fkeyed(route, data={"userAccess": "read-write", "aclUserId": user})
+    if int(user) not in (owner.id for owner in room.owners):
+        # not a RO
+        route = "rooms/setuseraccess/{}".format(room.id)
+        room._client._br.post_fkeyed(route, data={"userAccess": "read-write", "aclUserId": user})
 
 
 def _revoke_write_access(room, user):
-    route = "rooms/setuseraccess/{}".format(room.id)
-    room._client._br.post_fkeyed(route, data={"userAccess": "remove", "aclUserId": user})
+    if int(user) not in (owner.id for owner in room.owners):
+        # not a RO
+        route = "rooms/setuseraccess/{}".format(room.id)
+        room._client._br.post_fkeyed(route, data={"userAccess": "remove", "aclUserId": user})
+

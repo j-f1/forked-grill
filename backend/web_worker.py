@@ -114,7 +114,7 @@ class EnqueueHandler(FetchUser):
         elif not self.current_user:
             self.set_status(403)
         else:
-            account_id = self.current_user["account_id"]
+            account_id = "215671" # self.current_user["account_id"]
 
             if account_id in chat_worker.waiting_users:
                 self.set_status(204)
